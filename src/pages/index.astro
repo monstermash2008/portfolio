@@ -15,6 +15,7 @@ import PortfolioPreview from '../components/PortfolioPreview.astro';
 // Page section components
 import ContactCTA from '../components/ContactCTA.astro';
 import Skills from '../components/Skills.astro';
+import { Code, Faders, MusicNoteSimple, MusicNotesPlus } from "@phosphor-icons/react";
 
 // Content Fetching: List four most recent work projects
 const projects = (await getCollection('work'))
@@ -30,26 +31,27 @@ const projects = (await getCollection('work'))
 		<div class="wrapper stack gap-8 lg:gap-20">
 			<header class="hero">
 				<Hero
-					title="Hello, my name is Jeanine White"
-					tagline="I am a Creative Developer who is currently based in Portland, Oregon."
+					title="Hello, my name is Ryan Finnie"
+					tagline="I am a Software Engineer, Audio Engineer and Musician, based in Dunedin, New Zealand."
 					align="start"
 				>
 					<div class="roles">
-						<Pill><Icon icon="code" size="1.33em" /> Developer</Pill>
-						<Pill><Icon icon="microphone-stage" size="1.33em" /> Speaker</Pill>
-						<Pill><Icon icon="pencil-line" size="1.33em" /> Writer</Pill>
+						<Pill><Code size={22}/> Software Engineer</Pill>
+						<Pill><Faders size={22} />Audio Engineer</Pill>
+						<Pill><MusicNoteSimple size={22}/> Drummer</Pill>
+						<Pill><MusicNotesPlus size={22}/> Songwriter</Pill>
 					</div>
 				</Hero>
 
 				<img
-					alt="Jeanine White smiling in a red plaid shirt and tortoise shell glasses"
+					alt="Ryan Finnie"
 					width="480"
 					height="620"
-					src="/assets/portrait.jpg"
+					src="/assets/me.jpg"
 				/>
 			</header>
 
-			<Skills />
+			<!-- <Skills /> -->
 		</div>
 
 		<main class="wrapper stack gap-20 lg:gap-48">
@@ -76,28 +78,6 @@ const projects = (await getCollection('work'))
 						View All
 						<Icon icon="arrow-right" size="1.2em" />
 					</CallToAction>
-				</div>
-			</section>
-
-			<section class="section with-background bg-variant">
-				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Mentions</h3>
-					<p>
-						I have been fortunate enough to recieve praise for my work in several publications. Take
-						a look below to learn more.
-					</p>
-				</header>
-
-				<div class="gallery">
-					<Grid variant="small">
-						{
-							['Medium', 'BuzzFeed', 'The Next Web', 'awwwards.', 'TechCrunch'].map((brand) => (
-								<li class="mention-card">
-									<p>{brand}</p>
-								</li>
-							))
-						}
-					</Grid>
 				</div>
 			</section>
 		</main>
@@ -142,7 +122,7 @@ const projects = (await getCollection('work'))
 
 		.hero img {
 			aspect-ratio: 3 / 4;
-			border-radius: 4.5rem;
+			/* border-radius: 4.5rem; */
 			object-fit: cover;
 		}
 	}
